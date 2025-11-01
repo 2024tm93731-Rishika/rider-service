@@ -1,3 +1,4 @@
+// File used to import data into database
 const XLSX = require('xlsx');
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
@@ -7,7 +8,7 @@ const { v4: uuidv4 } = require('uuid');
 const DB_PATH = path.join(__dirname, 'ridersData.db');
 
 // CSV file path
-const CSV_FILE_PATH = path.join(__dirname, 'rhfd_riders.csv');
+const CSV_FILE_PATH = path.join(__dirname, '../../data/rhfd_riders.csv');
 
 console.log('Starting data import...');
 
