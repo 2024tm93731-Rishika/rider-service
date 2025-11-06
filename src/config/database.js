@@ -84,16 +84,6 @@ class Database {
     this.db.run(query, [id], callback);
   }
 
-  // Update rider stats (for external services)
-  updateRiderStats(rider_id, rating, totalTrips, callback) {
-    const query = `
-      UPDATE riders 
-      SET rating = ?, total_trips = ?, updated_at = CURRENT_TIMESTAMP
-      WHERE rider_id = ?
-    `;
-    this.db.run(query, [rating, totalTrips, rider_id], callback);
-  }
-
   close() {
     this.db.close();
   }
