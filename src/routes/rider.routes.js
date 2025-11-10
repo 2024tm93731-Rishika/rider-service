@@ -6,7 +6,7 @@ const controller = require('../controllers/rider.controller');
 // TRIP ENDPOINTS FOR RIDERS
 /**
  * @swagger
- * /v1/health:
+ * /health:
  *   get:
  *     summary: Health check endpoint
  *     tags: [Health]

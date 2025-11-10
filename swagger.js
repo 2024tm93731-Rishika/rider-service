@@ -22,7 +22,7 @@ const options = {
         description: 'Development server',
       },
       {
-        url: 'http://localhost:3001',
+        url: 'http://ec2-43-205-120-185.ap-south-1.compute.amazonaws.com:3001',
         description: 'Production server',
       },
     ],
