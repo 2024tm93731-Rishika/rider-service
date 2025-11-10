@@ -4,45 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rider Service API Documentation</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui.min.css">
     <style>
+        html {
+            box-sizing: border-box;
+            overflow: -moz-scrollbars-vertical;
+            overflow-y: scroll;
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f4;
+            margin: 0;
+            background: #fafafa;
         }
-        .container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        h1 { color: #333; border-bottom: 3px solid #007bff; padding-bottom: 10px; }
-        h2 { color: #555; margin-top: 30px; }
-        .endpoint { background-color: #f9f9f9; padding: 15px; margin: 15px 0; border-left: 4px solid #007bff; }
-        .method { display: inline-block; padding: 5px 10px; border-radius: 4px; font-weight: bold; margin-right: 10px; }
-        .get { background-color: #61affe; color: white; }
-        .post { background-color: #49cc90; color: white; }
-        .put { background-color: #fca130; color: white; }
-        .delete { background-color: #f93e3e; color: white; }
-        code { background-color: #f4f4f4; padding: 2px 6px; border-radius: 3px; }
-        pre { background-color: #282c34; color: #abb2bf; padding: 15px; border-radius: 4px; overflow-x: auto; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Rider Service API Documentation</h1>
-        <p>Welcome to the Rider Service API. This microservice handles rider management, trip creation, and booking operations.</p>
-
-        <h2>Overview</h2>
-        <p>The Rider Service is a Node.js/Express microservice that manages riders and their trips. It connects to a SQLite/PostgreSQL database and integrates with other microservices.</p>
-
-        <h2>Documentation</h2>
-        <p>For more information, check out the <a href="https://github.com/2024tm93731-rishika/rider-service">GitHub Repository</a></p>
-
-        <hr>
-    </div>
+    <div id="swagger-ui"></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-bundle.min.js"></script>
+    <script>
+        window.onload = function() {
+            const ui = SwaggerUIBundle({
+                url: "./swagger.yaml",
+                dom_id: '#swagger-ui',
+                presets: [
+                    SwaggerUIBundle.presets.apis,
+                    SwaggerUIBundle.SwaggerUIStandalonePreset
+                ],
+                plugins: [
+                    SwaggerUIBundle.plugins.DownloadUrl
+                ],
+                layout: "BaseLayout"
+            })
+            window.ui = ui
+        }
+    </script>
 </body>
 </html>
