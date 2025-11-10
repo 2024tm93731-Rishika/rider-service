@@ -4,12 +4,14 @@ const cors = require('cors');
 const riderRoutes = require('./routes/rider.routes');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('../swagger');
+const path = require('path');
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, '..')));
 
 // Routes
 app.use('/v1/riders', riderRoutes);
